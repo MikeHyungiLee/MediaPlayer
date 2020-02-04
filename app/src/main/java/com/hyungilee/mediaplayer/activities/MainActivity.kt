@@ -1,7 +1,8 @@
-package com.hyungilee.mediaplayer
+package com.hyungilee.mediaplayer.activities
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.hyungilee.mediaplayer.R
 
 class MainActivity : AppCompatActivity() {
 
