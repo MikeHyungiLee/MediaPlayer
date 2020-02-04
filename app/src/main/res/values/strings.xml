@@ -1,3 +1,25 @@
 <resources>
     <string name="app_name">MediaPlayer</string>
+
+    <!-- PrivacyPolicyFragment -->
+    <string name="privacy_policy_text">PrivacyPolicyr　例文</string>
+
+    <!-- TermsOfUseFragment -->
+    <string name="terms_of_use_text">Terms of use 例文</string>
+
+    <!-- LoginFirstActivity -->
+    <string name="login_first_intro_text">\n配布されたID・初期パスワードを\n入力してください</string>
+    <string name="login_first_id_hint">ID</string>
+    <string name="login_first_password_hint">パスワード</string>
+    <string name="find_first_password_text"><u>パスワードを忘れた方はこちら</u></string>
+    <string name="login_first_button_text">LOGIN</string>
+
+    <string name="login_page_top_text"><p>LOG IN</p></string>
+    <string name="login_intro_text"><p>ログイン</p></string>
+    <string name="login_id_hint">ID</string>
+    <string name="login_password_hint">パスワード</string>
+    <string name="find_password_text"><u>パスワードを忘れた方はこちら</u></string>
+    <string name="login_button_text">LOGIN</string>
+
+
 </resources>

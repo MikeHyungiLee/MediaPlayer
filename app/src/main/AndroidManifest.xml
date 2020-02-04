@@ -18,7 +18,9 @@
         </activity>
 
         <!--MainActivity-->
-        <activity android:name=".MainActivity"/>
+        <activity android:name=".activities.MainActivity"/>
+        <!--LoginFirstActivity-->
+        <activity android:name=".activities.login.LoginFirstActivity"/>
 
     </application>
 
