@@ -21,10 +21,14 @@ import android.view.View
 import android.widget.CheckBox
 import androidx.fragment.app.Fragment
 import com.hyungilee.mediaplayer.R
+import com.hyungilee.mediaplayer.activities.MainActivity
 import com.hyungilee.mediaplayer.common.CommonMethod
 import com.hyungilee.mediaplayer.extensions.getBackStackTag
+import com.hyungilee.mediaplayer.model.UserAccount
+import com.hyungilee.mediaplayer.utilities.EXTRA_LOGIN_ACCOUNT
 import jp.co.bravogroup.leap.fragments.mypage.PrivacyPolicyFragment
 import jp.co.bravogroup.leap.fragments.mypage.TermsOfUseFragment
+import kotlinx.android.synthetic.main.activity_login_first.*
 
 /**
  * @brief 初期ログイン画面
@@ -66,62 +70,40 @@ class LoginFirstActivity : AppCompatActivity() {
         // チェックボックスの初期化
         checkBox = findViewById(R.id.checkbox)
         loginId.addTextChangedListener(object: TextWatcher {
-
-            override fun afterTextChanged(s: Editable?) {
-                checkEditText()
-            }
-            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
-                checkEditText()
-            }
-            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
-                checkEditText()
-            }
+            override fun afterTextChanged(s: Editable?) { checkEditText() }
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) { checkEditText() }
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) { checkEditText() }
         })
-
         loginPassword.addTextChangedListener(object: TextWatcher {
-
-            override fun afterTextChanged(s: Editable?) {
-                checkEditText()
-            }
-            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
-                checkEditText()
-            }
-            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
-                checkEditText()
-            }
+            override fun afterTextChanged(s: Editable?) { checkEditText() }
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) { checkEditText() }
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) { checkEditText() }
         })
 
         checkBox.setOnCheckedChangeListener { buttonView, isChecked ->
             // ログインIDの値
             val id = loginId.text.toString()
-
             // ログインパスワードの値
             val password = loginPassword.text.toString()
-
             when(isChecked && id.isNotEmpty() && password.isNotEmpty()) {
                 true-> {
                     loginButton.isEnabled = true
                     loginButton.setBackgroundResource(R.drawable.login_button_design)
                 }
-
                 false->{
                     loginButton.isEnabled = false
                     loginButton.setBackgroundResource(R.drawable.login_button_inactive_design)
                 }
             }
-
         }
-
         // パスワードを忘れた時
         passwordFind = findViewById(R.id.find_password)
         passwordFind.setOnClickListener {
-
         }
 
         /** 利用規約とプライバシーポリシーのチャックボックスのTextViewの初期化 */
         checkBoxInstruction = findViewById(R.id.checkbox_instruction)
         val instructionText = "続行することで、利用規約およびプライバシーに同意するものとみなされます。"
-        val spannableString = SpannableString(instructionText)
         val spannableStringBuilder = SpannableStringBuilder(instructionText)
 
         // Clickable テキストに設定する色
@@ -154,8 +136,18 @@ class LoginFirstActivity : AppCompatActivity() {
         loginId.alpha = 0.4f
         // ログイン画面のパスワード入力欄の背景色にAlpha値を設定
         loginPassword.alpha = 0.4f
+        // ログインボタンのクリックイベント処理
+        login_button.setOnClickListener { loginBtnOnClickEvent() }
     }
 
+    /**
+     * @brief ログインボタンの活性化・非活性化スタイル
+     * @par 概要
+     * ログインボタンの活性化・非活性化スタイルを条件によって切り替える
+     * @par 処理　なし
+     * @param なし
+     * @return なし
+     */
     private fun checkEditText(){
         if(loginId.text.isNotEmpty() && loginPassword.text.isNotEmpty() && checkBox.isChecked){
             loginButton.isEnabled = true
@@ -168,14 +160,11 @@ class LoginFirstActivity : AppCompatActivity() {
 
     /**
      * @brief フラグメントを切り替える
-     *
      * @par 概要
      * 切り替えるフラグメント
-     *
      * @par 処理
      * 引数としてもらったフラグメント変数がヌルじゃない場合は
      * FragmentManagerを使ってフレイムレイアウトの中のフラグメントを切り替える
-     *
      * @param fragment 画面に表示するフラグメント
      * @return なし
      */
@@ -186,6 +175,21 @@ class LoginFirstActivity : AppCompatActivity() {
             .replace(R.id.first_login_container,fragment)
             .addToBackStack(fragment.getBackStackTag())
             .commit()
+    }
+
+    /**
+     * @brief ログインボタンのOnClickListenerイベント処理
+     * @par 概要
+     * ログインボタンのOnClickListenerイベント処理作成
+     * @par 処理　なし
+     * @param　なし
+     * @return なし
+     */
+    private fun loginBtnOnClickEvent(){
+        val intent = Intent(this, MainActivity::class.java)
+        intent.putExtra(EXTRA_LOGIN_ACCOUNT, )
+        // MainActivity画面に遷移する
+        startActivity(intent)
     }
 
 }
