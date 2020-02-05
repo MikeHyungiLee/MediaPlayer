@@ -11,8 +11,9 @@ import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
 import androidx.appcompat.app.AppCompatActivity
-import com.hyungilee.mediaplayer.MainActivity
+import com.hyungilee.mediaplayer.activities.MainActivity
 import com.hyungilee.mediaplayer.R
+import com.hyungilee.mediaplayer.activities.intro.IntroActivity
 
 
 /**
@@ -33,7 +34,7 @@ class SplashActivity : AppCompatActivity() {
     private val mRunnable: Runnable = Runnable {
 
         // Splash画面を表示する時に初期化することを作成する部分
-        val intent = Intent(this@SplashActivity, MainActivity::class.java)
+        val intent = Intent(this@SplashActivity, IntroActivity::class.java)
         startActivity(intent)
         finish()
     }
