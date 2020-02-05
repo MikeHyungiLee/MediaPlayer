@@ -1,3 +1,10 @@
+/**
+ * @file FragmentExtensions.kt
+ * @brief 共通的に使うメソットを含むクラス
+ *
+ * @author 李 鉉基(LEE HYUNGI)
+ * @date 2020.02.05
+ */
 package com.hyungilee.mediaplayer.extensions
 
 import androidx.fragment.app.DialogFragment
@@ -24,12 +31,10 @@ fun Fragment.moveFragment(fragment: Fragment) {
  * @param dialogFragment DialogFragment
  */
 fun Fragment.showDialog(dialogFragment: DialogFragment) {
-
     // supportFragmentManager の nullチェック
     val supportFragmentManager = checkNotNull(activity?.supportFragmentManager) {
         return
     }
-
     dialogFragment.show(supportFragmentManager, dialogFragment.tag)
 }
 
@@ -40,7 +45,6 @@ fun Fragment.showDialog(dialogFragment: DialogFragment) {
  */
 fun Fragment.backFragment() {
     activity?.supportFragmentManager?.popBackStack()
-
     val context = ContextUtil.getApplicationContext()
     // フラグメント上に表示されたキーボードの表示を閉じるメソット適用
     CommonMethod().hideKeyboard(context, view!!)

@@ -21,5 +21,17 @@
     <string name="find_password_text"><u>パスワードを忘れた方はこちら</u></string>
     <string name="login_button_text">LOGIN</string>
 
+    <!-- IntroActivity -->
+    <string name="intro_activity_button_arrow_text">→</string>
+    <string name="intro_activity_button_text">Get Started!</string>
+    <string name="app_intro_layout_text_1">(1)アプリ紹介画面のレイアウト</string>
+    <string name="app_intro_layout_text_2">(2)アプリ紹介画面のレイアウト</string>
+    <string name="app_intro_layout_text_3">(3)アプリ紹介画面のレイアウト</string>
+    <string name="app_intro_layout_text_4">(4)アプリ紹介画面のレイアウト</string>
+
+    <!-- Privacy Policy and Terms of use Fragment-->
+    <string name="my_page_terms_of_use"><p>利用規約</p></string>
+    <string name="my_page_privacy_policy">プライバシー・ポリシー</string>
+    <string name="app_intro_screen">APP INTRO SCREEN</string>
 
 </resources>

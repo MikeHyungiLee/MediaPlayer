@@ -28,9 +28,9 @@
                 android:textAlignment="center"
                 android:layout_marginTop="20dp"
                 android:layout_marginBottom="18dp"
-                android:fontFamily="@font/hiragino_w6"
                 android:text="@string/my_page_privacy_policy"
-                android:textSize="14sp" />
+                android:textSize="14sp"
+            android:gravity="center_horizontal" />
 
     </LinearLayout>
 
