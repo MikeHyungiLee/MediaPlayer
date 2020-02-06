@@ -186,8 +186,14 @@ class LoginFirstActivity : AppCompatActivity() {
      * @return なし
      */
     private fun loginBtnOnClickEvent(){
+        // ログインID
+        val loginId = login_id.text.toString()
+        // ログインパスワード
+        val loginPassword = login_password.text.toString()
+        // ログインする時のアカウント情報
+        val userAccount = UserAccount(loginId, loginPassword)
         val intent = Intent(this, MainActivity::class.java)
-        intent.putExtra(EXTRA_LOGIN_ACCOUNT, )
+        intent.putExtra(EXTRA_LOGIN_ACCOUNT, userAccount)
         // MainActivity画面に遷移する
         startActivity(intent)
     }
