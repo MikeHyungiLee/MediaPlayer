@@ -8,4 +8,9 @@
     <color name="textColor">#FFFFFF</color>
     <!--画面上に出力される文字の色(黒色)-->
     <color name="textColor_black">#000</color>
+    <!--Navigation barの背景色-->
+    <color name="navigation_bar_background_color">#333333</color>
+    <color name="background_white">#FFFFFF</color>
+    <color name="inactive_color">#B3BFBFBF</color>
+
 </resources>

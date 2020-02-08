@@ -34,4 +34,17 @@
     <string name="my_page_privacy_policy">プライバシー・ポリシー</string>
     <string name="app_intro_screen">APP INTRO SCREEN</string>
 
+    <!--Navigation menu tab タイトル-->
+    <string name="title_tab_music">MUSIC</string>
+    <string name="title_tab_video">VIDEO</string>
+    <string name="title_tab_download">DOWNLOAD</string>
+    <string name="title_tab_my_page">MYPAGE</string>
+    <string name="main_screen">Main screen</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="music_fragment_page">Music Fragment Page</string>
+    <string name="video_fragment_page">Video Fragment Page</string>
+    <string name="mypage_fragment_page">MyPage Fragment Page</string>
+    <string name="download_fragment_page">Download Fragment Page</string>
+
 </resources>
